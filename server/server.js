@@ -15,7 +15,7 @@ const spreadsheetId = "1mvszRlqWguLJkOgwAsQcrxn_ex1QrNpGMq2zdUjt9lc";
 // Обработчик маршрута для получения данных из Google Sheets
 app.get("/api/data", async (req, res) => {
   const param = req.body.param; // Получение значения параметра из запроса
-  console.log(typeof param)
+
   // Здесь выполняется ваша логика для проверки наличия параметра в Google Sheets и получения данных
   try {
     // Запрос к Google Sheets API для получения данных
@@ -25,7 +25,6 @@ app.get("/api/data", async (req, res) => {
     });
 
     const rows = response.data.values;
-    console.log(rows);
     const filteredRows = rows.filter((row) => row.includes(param));
     console.log(filteredRows);
     if (filteredRows) {
