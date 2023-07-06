@@ -14,7 +14,7 @@ const spreadsheetId = "1mvszRlqWguLJkOgwAsQcrxn_ex1QrNpGMq2zdUjt9lc";
 
 // Обработчик маршрута для получения данных из Google Sheets
 app.get("/api/data", async (req, res) => {
-  const param = req.body.param; // Получение значения параметра из запроса
+  const param = req.query.param; // Получение значения параметра из запроса
 
   // Здесь выполняется ваша логика для проверки наличия параметра в Google Sheets и получения данных
   try {
